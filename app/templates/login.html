@@ -41,14 +41,18 @@
         </form>
     </div>
 </div>
-<script>
-    $('#login_form').off('submit').on('submit', function (event) {
-        var selectedRole = $(this).find('#userRole');
-        event.stopPropagation();
-        event.preventDefault();
-        if(selectedRole && selectedRole[0] && selectedRole[0].value){
-            location.href = '/' + selectedRole[0].value
-        }
-    })
-</script>
+
 {%- endblock -%}
+{%- block scripts -%}
+    {{ super() }}
+    <script>
+        $('#login_form').off('submit').on('submit', function (event) {
+            var selectedRole = $(this).find('#userRole');
+            event.stopPropagation();
+            event.preventDefault();
+            if(selectedRole && selectedRole[0] && selectedRole[0].value){
+                location.href = '/' + selectedRole[0].value
+            }
+        })
+    </script>
+{%- endblock scripts -%}
