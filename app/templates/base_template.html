@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/timeline.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
   <nav class="grey darken-3" role="navigation">
@@ -64,9 +65,11 @@
   <script src="/static/js/web3.min.js"></script>
   <script src="/static/js/app.js"></script>
   <script src="/static/js/materialize.js"></script>
-  <script src="/static/js/init.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+  {% endblock %}
+  {% block initscripts %}
+      <script src="/static/js/init.js"></script>
   {% endblock %}
   </body>
 </html>

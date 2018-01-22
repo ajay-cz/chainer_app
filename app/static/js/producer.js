@@ -20,6 +20,7 @@ angular.module('producerApp', ['ui.materialize'])
             $scope.items = JSON.parse(window.localStorage.items);
         }
         $scope.openModal = false;
+        $scope.transactionInitiated = false;
 
         $scope.formItem = {};
 
@@ -36,4 +37,8 @@ angular.module('producerApp', ['ui.materialize'])
             console.log($scope.items[productId]);
             console.log(window.w3App);
         };
+
+        $scope.initiateTransaction = function() {
+            $scope.transactionInitiated = true;
+        }
     });

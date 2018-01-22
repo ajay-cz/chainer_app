@@ -63,9 +63,9 @@ App = {
     },
     //
     bindEvents: function() {
-      $('.ship_this').off('click').on('.ship_this', function (event) {
-            alert("hello");
-      });
+//      $('.ship_this').off('click').on('.ship_this', function (event) {
+//            alert("hello");
+//      });
     },
 
     markAdopted: function (adopters, account) {
