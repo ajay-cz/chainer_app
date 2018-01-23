@@ -19,6 +19,12 @@ angular.module('producerApp', ['ui.materialize'])
         else {
             $scope.items = JSON.parse(window.localStorage.items);
         }
+
+        $http.get("/static/data/orders.json")
+                .then(function(response) {
+                    $scope.txns = response.data;
+                });
+
         $scope.openModal = false;
         $scope.transactionInitiated = false;
 
@@ -39,6 +45,10 @@ angular.module('producerApp', ['ui.materialize'])
         };
 
         $scope.initiateTransaction = function() {
-            $scope.transactionInitiated = true;
+            setTimeout(function () {
+                $scope.$apply(function(){
+                    $scope.transactionInitiated = true;
+            });
+            }, 2000);
         }
     });

@@ -6,7 +6,7 @@
         <h4>Producer</h4>
     </div>
 </div>
-
+        {% raw %}
 <div class="container" ng-app="producerApp" ng-controller="producerCtrl">
     <div class="card col-md-4 center"><i class="material-icons ">account_balance_wallet</i> Wallet Address: <b>0x627306090abab3a6e1400e9345bc60c78a8bef57</b></div>
     <div class="card" ng-cloak="">
@@ -21,7 +21,6 @@
                 <li class="tab"><a href="#payments">Payments</a></li>
             </ul>
         </div>
-        {% raw %}
 
         <div class="card-content grey lighten-5">
             <div id="produce">
@@ -55,6 +54,8 @@
                                 <!--<i class="material-icons">mode_edit</i>-->
                                 <!--<i class="material-icons">mode_delete</i>-->
                                 <ul id="ship_this_{{$index}}" class="side-nav">
+
+                                    <div class="col s6 header center" style="padding: 10px">Ship To</div>
                                     <div class="col s6 m6" style="padding: 10px">
                                         <div class="card">
                                             <h5 class=" center header">Consumer</h5>
@@ -101,7 +102,23 @@
 
             </div>
             <div id="transactions">
+                <table class="highlight">
+                    <thead>
+                    <tr>
+                        <th>Txn Hash</th>
+                        <th>Item Name</th>
+                        <th>Item Price</th>
+                    </tr>
+                    </thead>
 
+                    <tbody>
+                    <tr ng-repeat="item in txns track by $index">
+                        <td>{{item.txn}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
             <div id="payments"></div>
         </div>
